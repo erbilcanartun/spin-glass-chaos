@@ -5,7 +5,9 @@ def matrix_normalizer(matrix):
     return matrix / np.amax(matrix)
 
 def element_ratio(matrix):
-    return mp.log(matrix[0, 0] / matrix[0, -1])
+    # Divide first element by last element of the first row
+    n = matrix.rows
+    return mp.log(matrix[0, 0] / matrix[0, n - 1]) / 2
 
 def average_element_ratio(matrix_list):
     element_list = []
@@ -21,7 +23,7 @@ def average_element_ratio_strength(matrix_list):
 
 def transfer_matrix(spin, interaction):
 
-    J = interaction
+    J = mp.mpf(interaction)
 
     # Generate a list of spin values for spin-s system
     # e.g. spin-3/2 = [3/2, 1/2, 0, -1/2, -3/2]
@@ -41,24 +43,31 @@ def transfer_matrix(spin, interaction):
     energy_max = np.amax(energy)
 
     # Construct transfer matrix
-    t = []
+    n = len(spin_values)
+    t = mp.matrix(n)
     counter = 0
-    for i in range(len(spin_values)):
-        row = []
-        for j in range(len(spin_values)):
-            row.append(mp.exp(energy[counter] - energy_max))
+    for i in range(n):
+        for j in range(n):
+            t[i, j] = mp.exp(energy[counter] - energy_max)
             counter = counter + 1
-        t.append(row)
 
-    return np.array(t)
+    return matrix_normalizer(t)
+
+def mp_multiply(t1, t2):
+    n = len(t1)
+    t = mp.matrix(n)
+    for i in range(n):
+        for j in range(n):
+            t[i, j] = t1[i, j] * t2[i, j]
+    return matrix_normalizer(t)
 
 def bond_moving(t1, t2):
-    t = np.multiply(t1, t2)
+    t = mp_multiply(t1, t2)
     t = matrix_normalizer(t)
     return t#np.array(t)
 
 def decimation(t1, t2):
-    t = np.dot(t1, t2)
+    t = t1 * t2
     t = matrix_normalizer(t)
     return t
 
