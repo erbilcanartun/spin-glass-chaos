@@ -12,13 +12,13 @@ def interaction(matrix):
 def average_interaction(matrix_list):
     element_list = []
     for i in range(len(matrix_list)):
-        element_list.append(element_ratio(matrix_list[i]))
+        element_list.append(interaction(matrix_list[i]))
     return np.mean(element_list)
 
 def average_interaction_strength(matrix_list):
     element_list = []
     for i in range(len(matrix_list)):
-        element_list.append(np.absolute(element_ratio(matrix_list[i])))
+        element_list.append(np.absolute(interaction(matrix_list[i])))
     return np.mean(element_list)
 
 def transfer_matrix(spin, interaction):
