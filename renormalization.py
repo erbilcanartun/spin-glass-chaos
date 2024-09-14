@@ -4,18 +4,18 @@ import mpmath as mp
 def matrix_normalizer(matrix):
     return matrix / np.amax(matrix)
 
-def element_ratio(matrix):
+def interaction(matrix):
     # Divide first element by last element of the first row
     n = matrix.rows
     return mp.log(matrix[0, 0] / matrix[0, n - 1]) / 2
 
-def average_element_ratio(matrix_list):
+def average_interaction(matrix_list):
     element_list = []
     for i in range(len(matrix_list)):
         element_list.append(element_ratio(matrix_list[i]))
     return np.mean(element_list)
 
-def average_element_ratio_strength(matrix_list):
+def average_interaction_strength(matrix_list):
     element_list = []
     for i in range(len(matrix_list)):
         element_list.append(np.absolute(element_ratio(matrix_list[i])))
