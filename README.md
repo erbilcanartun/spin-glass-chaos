@@ -6,7 +6,7 @@ This repository demonstrates chaotic renormalization group (RG) flows in the spi
 
 In spin-glass systems, competing interactions between ferromagnetic and antiferromagnetic bonds lead to a highly frustrated magnetic state. These systems are particularly challenging due to their nontrivial ground states and chaotic behavior during renormalization. This project focuses on the study of chaotic RG flows in spin-glass phases, where the system exhibits unpredictable and complex behaviors as frustration increases.
 
-This repo explores hierarchical Ising models, where both ferromagnetic and antiferromagnetic interactions are present. These models are exactly solvable and exhibit nonclassical phase transitions at finite temperatures. In this work, I use Ising models with a varying $s$-parameter, representing spin-$s$ Ising models, where $s$ can take values such as $1/2$, $1$, $3/2$, $2$, $5/2$, etc.
+This repo explores hierarchical Ising models, where both ferromagnetic and antiferromagnetic interactions are present. These models are exactly solvable and exhibit nonclassical phase transitions at finite temperatures. In this work, I use Ising models with a varying $s$-parameter, representing spin$-s$ Ising models, where $s$ can take values such as $1/2$, $1$, $3/2$, $2$, $5/2$, etc.
 
 ## Key Features
 
@@ -16,7 +16,7 @@ This repo explores hierarchical Ising models, where both ferromagnetic and antif
 
 ## Model Details
 
-I study the competing interactions between ferromagnetic and antiferromagnetic bonds in hierarchical spin-$s$ Ising models, which allow for exact solutions. The primary model parameters are $s$, representing spin number, and $p$, representing the concentration of antiferromagnetic bonds. As $p$ increases, the frustration in the system also increases, reaching a maximum at $p=0.5$.
+I study the competing interactions between ferromagnetic and antiferromagnetic bonds in hierarchical spin$-s$ Ising models, which allow for exact solutions. The primary model parameters are $s$, representing spin number, and $p$, representing the concentration of antiferromagnetic bonds. As $p$ increases, the frustration in the system also increases, reaching a maximum at $p=0.5$.
 
 ### Key Observations:
 
