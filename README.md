@@ -16,7 +16,7 @@ This repo explores hierarchical Ising models, where both ferromagnetic and antif
 
 ## Model Details
 
-I study the competing interactions between ferromagnetic and antiferromagnetic bonds in a hierarchical Ising model, which allows for exact solutions. The primary model parameter is $p$, representing the concentration of antiferromagnetic bonds. As $p$ increases from 0, the frustration in the system also increases, reaching a maximum at $p=0.5$.
+I study the competing interactions between ferromagnetic and antiferromagnetic bonds in hierarchical spin-$s$ Ising models, which allow for exact solutions. The primary model parameters are $s$, representing spin number, and $p$, representing the concentration of antiferromagnetic bonds. As $p$ increases, the frustration in the system also increases, reaching a maximum at $p=0.5$.
 
 ### Key Observations:
 
